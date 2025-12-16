@@ -1,0 +1,13 @@
+services:
+  securecoda:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      - CODA_API_TOKEN=${CODA_API_TOKEN:-your_api_token_here}
+      - PORT=3001
+      - SCAN_INTERVAL_MINUTES=30
+      - UNUSED_DAYS_THRESHOLD=90
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
