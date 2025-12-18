@@ -33,10 +33,6 @@ export const remediateAlert = async (alertId, action) => {
   return response.data;
 };
 
-export const updateAlertStatus = async (alertId, status) => {
-  const response = await api.patch(`/alerts/${alertId}/status`, { status });
-  return response.data;
-};
 
 // Scan API
 export const triggerScan = async () => {
